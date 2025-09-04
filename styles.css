@@ -1,0 +1,1181 @@
+/* Reset CSS */
+* {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+}
+
+.ad{
+    position: fixed;
+    top: -1px;
+    width: 100%;
+}
+
+/* Preloader Styles */
+
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    flex-direction: column;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Preloader Content */
+.preloader-content {
+    text-align: center;
+}
+
+/* Logo Style */
+/* Logo Animation */
+.preloader-content img {
+    width: 100px;
+    /* Adjust size */
+    animation: bounce 1s ease-in-out infinite alternate, fadeInOut 2s ease-in-out infinite;
+}
+
+/* Bounce Effect */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fade In & Out Effect */
+@keyframes fadeInOut {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Loading Text */
+.preloader-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Custom Loader (Rotating Circle) */
+.loader-circle-34 {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.loader-circle-34:before,
+.loader-circle-34:after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: 10px solid #0000;
+}
+
+.loader-circle-34:before {
+    border-top-color: blue;
+    animation: spin 1s infinite;
+}
+
+.loader-circle-34:after {
+    animation: spin 1s infinite alternate;
+    border-bottom-color: #ccc;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-circle-34{
+    width: 30px;
+    height: 30px;
+}
+
+/* Hide Preloader Smoothly */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* error warning for page width */
+
+.page {
+    justify-content: center;
+    align-items: center;
+    height: 86.5vh;
+    text-align: center;
+    padding: 10px;
+    display: none;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 20px 30px;
+    border: 1px solid #f5c6cb;
+    border-radius: 12px;
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 50%;
+}
+
+.error h4 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.error p {
+    margin: 5px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding: 0 0 0 0;
+    width: 100vw;
+    height: fit-content;
+}
+
+/* Header Styles (Fixed Nav) */
+header {
+    background-color: #0d47a1;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+header .logo h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+header .logo P {
+    font-size: 1rem;
+    font-weight: 200;
+    color: white;
+    font-style: italic;
+}
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #f4b400;
+    border-bottom: 2px solid #f4b400;
+}
+
+/* Active Link Styling */
+header nav ul li a.active {
+    color: #f4b400;
+    border-bottom: 2px solid #f4b400;
+}
+
+/* Hero Section Styling */
+#hero {
+    height: 100vh;
+    width: 100vw;
+    /* Full height of viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background 1s ease-in-out;
+    color: white;
+    position: relative;
+}
+
+/* Add an overlay effect for better readability */
+#hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.568);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+    width: 80vw;
+    align-content: center;
+    z-index: 2;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: #f9f9f9;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* CTA Button Styling */
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 600;
+
+    i{
+        font-weight: 500;
+    }
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* About Us Section */
+
+.about-container{
+    padding: 40px;
+}
+
+.about-us-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    padding-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-us-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-us-section h3 {
+    font-size: 1.75rem;
+    color: #007bff;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.about-us-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 10px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.why-choose-us {
+    text-align: center;
+    padding: 50px 20px;
+
+    h3 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+    
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    
+        .card {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+    
+        .card i {
+            font-size: 3em;
+            color: blue;
+            /* Green color for icons */
+            margin-bottom: 15px;
+        }
+    
+        .card h4 {
+            font-size: 1.4em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+    
+        .card p {
+            font-size: 1em;
+            color: #777;
+        }
+    
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+}
+
+
+
+/* Services Section */
+#services {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Creates 3 equal columns */
+    gap: 20px;
+    /* Space between columns */
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Center the container */
+    padding: 20px;
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.service-card i {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    color: blue;
+}
+
+.service-card:hover i {
+    transform: rotate(360deg);
+    /* Icon rotation effect on hover */
+}
+
+.service-card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact-container{
+    height: 100%;
+    margin-top: 0;
+    border: solid red;
+}
+
+.cont {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    padding: 0;
+
+    .info {
+        width: 50%;
+        margin: 0;
+        padding: 20px;
+        background: #0d47a1;
+    
+        .txt {
+            text-align: justify;
+            color: white;
+        }
+    
+        .icon {
+            text-align: center;
+            margin-top: 20px;
+    
+            a {
+                color: white;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.form {
+    margin: 0;
+    padding: 20px;
+    width: 60%;
+    justify-items: center;
+
+    h4 {
+        text-align: center;
+        color: #0d47a1;
+    }
+
+    form {
+        margin-top: 20px;
+        box-shadow: 3px 4px 6px grey;
+        padding: 20px;
+
+        table i {
+            position: absolute;
+            margin: 14px 5px;
+        }
+
+        button {
+            background: #0d47a1;
+            padding: 3px 8px;
+            margin-right: 0;
+            margin-left: auto;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            background: blue;
+            box-shadow: 2px 3px 5px grey;
+        }
+
+    }
+
+
+
+    form input{
+        margin: 10px 0;
+        padding: 5px;
+        width: 300px;
+        padding-left: 25px;
+    }
+
+    form textarea{
+        margin: 10px 0;
+        padding: 5px;
+        width: 300px;
+        height: 100px;
+    }
+
+    form input:focus, form textarea:focus{
+        border: 1px solid blue;
+    }
+}
+
+.char-count{
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -10px;
+    text-align-last: right;
+}
+
+.errormsg{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    margin-top: -10px;
+    padding: 0;
+    text-align: center;
+}
+
+/* Footer Section */
+footer {
+    background-color: #0d47a1;
+    padding: 20px 0;
+    line-height: 0.5px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+
+    a{
+        color: white;
+    }
+}
+
+/* overall */
+
+#about,
+#services,
+#contact {
+    padding-top: 140px;
+    height: fit-content;
+}
+
+
+/*Responsive */
+
+/* Media Queries for Tablet Devices */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    header .container {
+        display: block;
+        text-align: center;
+    }
+
+    header .logo h1 {
+        font-size: 2.5rem;
+        padding-bottom: 0;
+    }
+
+    header .logo P {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero-content {
+        margin-top: 140px;
+    }
+
+    #services {
+        padding-top: 160px;
+        margin-bottom: 40px;
+        padding-bottom: 10px;
+    }
+
+    /*contact us section */
+
+    #contact h2 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cont{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header .container {
+        display: block;
+        text-align: center;
+    }
+    
+    header .logo h1 {
+        font-size: 2rem;
+        padding-bottom: 0;
+    }
+    
+    header .logo P {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 15px;
+    }
+
+    /*hero section */
+
+    .hero-content {
+        margin-top: 120px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /*about us section */
+
+    .about-us-section h3, .info-card h3 {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    
+    .about-us-section p, .info-card p {
+        font-size: 1rem;
+    }
+
+    .cards-container {
+        display: block;
+    }
+
+    .info-card {
+        width: 100%;
+        margin-bottom: 20px;
+        padding-top: 10px;
+    }
+
+    .why-choose-us {
+        text-align: center;
+        padding-top: 0px;
+
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            width: 300px;
+        }
+
+        .card i {
+            font-size: 2em;
+        }
+
+        .card h4 {
+            margin-bottom: 10px;
+        }
+    }
+
+
+    /* services section */
+
+    .service-container {
+        display: block;
+    }
+
+    #services h2 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .service-card {
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    /*contact us section */
+    
+    #contact h2 {
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .cont {
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 0;
+
+        .info{
+            width: 100%;
+        }
+    }
+
+    .form{
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+
+        table{
+            width: 100%;
+        }
+    }
+
+
+    /* all sections */
+
+    #about,
+    #contact {
+        padding-top: 100px;
+        height: fit-content;
+        padding-bottom: 20px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+}
+
+/* Media Queries for Extra Small Mobile Devices */
+@media screen and (min-width: 400px) and (max-width: 480px) {
+
+    .send{
+    	font-size: 12px;
+    }
+ 
+    header .container {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+    
+    header .logo h1 {
+        font-size: 1.5rem;
+        padding-bottom: 0;
+    }
+    
+    header .logo P {
+        margin-top: 3px;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+    
+        header nav ul li a {
+            font-size: 15px;
+        }
+    
+        /*hero section */
+
+        .hero-content {
+            margin-top: 120px;
+        }
+    
+        .hero-content h2 {
+            font-size: 1.4rem;
+            letter-spacing: 0.2px;
+            margin-bottom: 0;
+        }
+    
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .cta-button{
+            padding: 10px 20px;
+        }
+    
+        /*about us section */
+
+        .about-container {
+            padding: 20px;
+            margin-top: 20px;
+        }
+    
+        .about-us-section h3,
+        .info-card h3 {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+    
+        .about-us-section p,
+        .info-card p {
+            font-size: 1rem;
+        }
+    
+        .cards-container {
+            display: block;
+        }
+    
+        .info-card {
+            width: 100%;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+    
+        .why-choose-us {
+            text-align: center;
+            padding-top: 0px;
+    
+    
+            h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+    
+            .card {
+                width: 300px;
+            }
+    
+            .card i {
+                font-size: 2em;
+            }
+    
+            .card h4 {
+                margin-bottom: 10px;
+            }
+        }
+    
+    
+        /* services section */
+
+        .service-container {
+            display: block;
+        }
+    
+        #services h2 {
+            font-size: 1.4rem;
+            margin-top: 40px;
+        }
+    
+        .service-card {
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+    
+        /*contact us section */
+    
+        #contact h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+    
+        .cont {
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 0;
+    
+            .info {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        .form {
+            width: 100%;
+            padding: 10px;
+
+            table{
+                width: 10%;
+            }
+        }
+    
+    
+        /* all sections */
+    
+        #about,
+        #contact {
+            margin-top: 0px;
+            height: fit-content;
+            padding-bottom: 20px;
+        }
+    
+        footer p {
+            font-size: 0.8rem;
+        }
+}
+
+/* Media Queries for Extra Small Mobile Devices */
+@media screen and (max-width: 399px) {
+
+    .send{
+    	font-size: 10px;
+    }
+
+    header .container {
+        padding: 10px;
+        display: block;
+        text-align: center;
+    }
+    
+    header .logo h1 {
+        font-size: 1.5rem;
+        padding-bottom: 0;
+    }
+    
+    header .logo P {
+        margin-top: 3px;
+        margin-bottom: 10px;
+    }
+
+    header nav ul li {
+        margin: 0 5px;
+    }
+    
+        header nav ul li a {
+            font-size: 15px;
+        }
+    
+        /*hero section */
+
+        .hero-content {
+            margin-top: 120px;
+        }
+    
+        .hero-content h2 {
+            font-size: 1.4rem;
+            letter-spacing: 0.2px;
+            margin-bottom: 0;
+        }
+    
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .cta-button{
+            padding: 10px 20px;
+        }
+    
+        /*about us section */
+
+        .about-container {
+            padding: 20px;
+            margin-top: 20px;
+        }
+    
+        .about-us-section h3,
+        .info-card h3 {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+    
+        .about-us-section p,
+        .info-card p {
+            font-size: 1rem;
+        }
+    
+        .cards-container {
+            display: block;
+        }
+    
+        .info-card {
+            width: 100%;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+    
+        .why-choose-us {
+            text-align: center;
+            padding-top: 0px;
+    
+    
+            h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+    
+            .card {
+                width: 300px;
+            }
+    
+            .card i {
+                font-size: 2em;
+            }
+    
+            .card h4 {
+                margin-bottom: 10px;
+            }
+        }
+    
+    
+        /* services section */
+
+        .service-container {
+            display: block;
+        }
+    
+        #services h2 {
+            font-size: 1.4rem;
+            margin-top: 40px;
+        }
+    
+        .service-card {
+            margin-bottom: 10px;
+            padding: 20px;
+        }
+    
+        /*contact us section */
+    
+        #contact h2 {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+    
+        .cont {
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 0;
+    
+            .info {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+
+        .form {
+            width: 100%;
+            padding: 10px;
+
+            form{
+                padding: 0;
+            }
+
+            table{
+                width: 100%;
+                padding: 10px;
+            }
+
+            .table textarea, .table input{
+                width: 100%;
+            }
+        }
+    
+    
+        /* all sections */
+    
+        #about,
+        #contact {
+            margin-top: 0px;
+            height: fit-content;
+            padding-bottom: 20px;
+        }
+    
+        footer p {
+            font-size: 0.8rem;
+        }
+}
+
+/* Show error and hide other content when width < 300px */
+@media (max-width: 299px) {
+    .page {
+     display: block;
+    }
+
+    .content {
+     display: none;
+    }
+}
